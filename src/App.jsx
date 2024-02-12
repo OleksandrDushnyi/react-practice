@@ -28,29 +28,45 @@ if (content) {
           <h3>Хто такий FullStack розробник</h3>
 
         <ul>
-           
-        <WayToTeach {...ways[0]}/>
+           {ways.map((way) => (
+            <WayToTeach key={way.description}{...way}/>
+           ))}
+        {/* <WayToTeach {...ways[0]}/>
         <WayToTeach {...ways[1]}/>
-        <WayToTeach {...ways[2]}/>
+        <WayToTeach {...ways[2]}/> */}
         </ul>
         </section>
         <section>
           <h3>
           Які технології потрібно вивчити
           </h3>
-           <Button buttonClicked={() => handleClick('css')}>Мови верстання </Button>
-           <Button buttonClicked={() => handleClick('js')}>JavaScript</Button>
-           <Button buttonClicked={() => handleClick('git')}>Git</Button>
-           <Button buttonClicked={() => handleClick('react')}>React</Button>
-           <Button buttonClicked={() => handleClick('mysql')}>MySQL</Button>
-           <Button buttonClicked={() => handleClick('nodejs')}>Node.js</Button>
+           <Button 
+           isActive={content === 'css'} 
+           onClick={() => handleClick('css')}>
+            Мови верстання 
+           </Button>
+           <Button 
+           isActive={content === 'js'} 
+           onClick={() => handleClick('js')}>JavaScript</Button>
+           <Button 
+           isActive={content === 'git'} 
+           onClick={() => handleClick('git')}>Git</Button>
+           <Button 
+           isActive={content === 'react'} 
+           onClick={() => handleClick('react')}>React</Button>
+           <Button 
+           isActive={content === 'mysql'} 
+           onClick={() => handleClick('mysql')}>MySQL</Button>
+           <Button 
+           isActive={content === 'nodejs'} 
+           onClick={() => handleClick('nodejs')}>Node.js</Button>
         
        {/* {content ? (
         // <p>{differences[content]}</p>
         // ) : (
         //   <p>Натисни на кнопку</p>
         // )}  */}
-        
+
 
         {tabContent}
         </section>
