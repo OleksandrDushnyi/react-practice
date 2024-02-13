@@ -1,4 +1,4 @@
-import Header from "./components/Header"
+import Header from "./components/Header/Header.jsx"
 import TeachSection from "./components/TeachingSection"
 import DifferencesSection from "./components/DefferencesSection"
 import IntroSection from "./components/IntroSection"
